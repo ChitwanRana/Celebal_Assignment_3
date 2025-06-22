@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body style="background: #f4f6f9;">
+  <div class="container text-center py-5">
+    <h2 class="text-primary mb-4">{{ title }}</h2>
+
+    <img src="{{ url_for('static', filename='images/' + image_file) }}" class="img-fluid rounded shadow mb-4" style="max-width: 90%; height: auto;">
+
+    <div class="card p-4 mx-auto mb-4" style="max-width: 800px; text-align: left;">
+      <h5 class="text-secondary">🧠 What this graph shows:</h5>
+      <p class="mt-2">
+        {% if 'survival_count' in image_file %}
+          This bar chart shows the number of people who survived vs those who didn’t. It provides a quick snapshot of the survival rate on the Titanic.
+        {% elif 'age_distribution' in image_file %}
+          This histogram shows how passenger ages were distributed. The smooth curve (KDE) helps spot common age groups onboard.
+        {% elif 'class_pie' in image_file %}
+          This pie chart displays the percentage of passengers in First, Second, and Third class. It highlights how the ship was socially structured.
+        {% elif 'boxplot_age_class' in image_file %}
+          This box plot compares the age distribution across each passenger class. It shows medians, ranges, and outliers per class.
+        {% elif 'violin_age_survival' in image_file %}
+          This violin plot compares the age spread of survivors and non-survivors. The shape shows how concentrated the age groups were.
+        {% elif 'heatmap_corr' in image_file %}
+          This heatmap shows correlations between numeric features like age, fare, and survival. A brighter color means stronger correlation.
+        {% elif 'scatter_fare_age' in image_file %}
+          This scatter plot shows fare paid vs passenger age. Points are colored by survival status to explore any trends.
+        {% elif 'embarked_class' in image_file %}
+          This bar chart compares embarkation ports (C, Q, S) with class levels. It tells us which classes boarded from which locations.
+        {% elif 'swarm_age_sex_survival' in image_file %}
+          This swarm plot visualizes each passenger’s age, gender, and survival. You can spot patterns by how the points group.
+        {% elif 'boxen_fare_embarked' in image_file %}
+          This boxen plot shows the distribution of fares by embarkation point. It reveals how fare varied per boarding port.
+        {% else %}
+          This graph provides useful insight into the Titanic dataset.
+        {% endif %}
+      </p>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">🔙 Back to Visualizations</a>
+  </div>
+</body>
+</html>
