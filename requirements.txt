@@ -2,3 +2,4 @@ Flask
 matplotlib
 seaborn
 pandas
+gunicorn
