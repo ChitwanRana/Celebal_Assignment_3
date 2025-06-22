@@ -67,4 +67,4 @@ python app.py
 ---
 
 ## 🌐 Live Demo
-Check out the live deployed project here: [View Project on Render](https://celebal-assignment-2.onrender.com)
+Check out the live deployed project here: [View Project on Render](https://celebal-assignment-3.onrender.com)
