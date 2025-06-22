@@ -39,3 +39,32 @@ This app uses **Matplotlib** and **Seaborn** to create the following visualizati
     - Detailed distribution of fare values grouped by the port of embarkation.
 
 ---
+
+## 🛠️ Technologies Used
+
+- Python 3  
+- Flask  
+- HTML5  
+- CSS3  
+- Bootstrap 5
+
+---
+
+## 🔗 To Create Virtual Environment
+To create virtual env --> **Python -m venv Name_of_Virtual_env** (for e.g. --> python -m venv myenv)  
+To activate --> **Name_of_virtual_env/Scripts/activate** (for e.g. --> myenv/Scripts/activate)
+
+---
+
+## 🖥️ To Install Dependencies
+pip install -r requirements.txt  
+
+---
+
+## 🚨 To Run App Using Flask 
+python app.py
+
+---
+
+## 🌐 Live Demo
+Check out the live deployed project here: [View Project on Render](https://celebal-assignment-2.onrender.com)
